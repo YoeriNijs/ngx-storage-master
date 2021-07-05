@@ -1,4 +1,4 @@
-# NgxStorageMaster<T>
+# NgxStorageMaster
 
 A full Angular-based type-safe wrapper around the Web Storage API.
 

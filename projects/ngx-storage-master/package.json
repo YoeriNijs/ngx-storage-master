@@ -1,6 +1,6 @@
 {
   "name": "ngx-storage-master",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A full Angular-based type-safe wrapper around the Web Storage API",
   "author": "Yoeri Nijs",
   "repository": {
