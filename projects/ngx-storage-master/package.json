@@ -1,6 +1,13 @@
 {
   "name": "ngx-storage-master",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "A full Angular-based type-safe wrapper around the Web Storage API",
+  "author": "Yoeri Nijs",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:YoeriNijs/ngx-storage-master.git"
+  },
+  "license": "GPL-3.0",
   "peerDependencies": {
     "@angular/common": "^11.0.9",
     "@angular/core": "^11.0.9"
