@@ -33,9 +33,11 @@ providers: [
 ]
 ```
 
-Now, just use the service you want to use. For retrieval, you need to use a type guard. This is needed to guarantee type-safety runtime. Of course, you are fully in control. If you do not want to use a strict guard, just pass a wildcard like so: `const typeGuard = () => true;`
+Now, just use the service you want to use. For retrieval, it is required that you specify a so-called type guard. TypeScript is able to guarantee type-safety compile time. However, since we are dealing with raw data from LocalStorage and SessionStorage, we need
+to add a runtime check as well. If you do not like this, or you think it is nonsense, just pass a wildcard: `const typeGuard = () => true;`. Remember: you are always in control of your data.
 
 ```
+// For demonstration purpose only
 interface SessionStorageObject {
   value: string;
   active: boolean;
@@ -63,7 +65,7 @@ export class CustomComponent implements OnInit {
 The api for the LocalStorageService does not differ compared to the SessionStorageService.
 
 ## Run tests
-Test are written in the Jest test runner. To run them, just execute the following:
+The Jest test runner is used to run the unit tests. To run them, just execute the following:
 ```
 npm install
 npm run test
