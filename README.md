@@ -14,29 +14,46 @@ A full Angular-based type-safe wrapper around the Web Storage API.
 With StorageMaster, you first define a prefix for the storage you want to use. To do this, just add the LocalStorage or SessionStorage injection token to the module you want to configure. What is nice about it, is that you can specify custom prefixes for various modules.
 
 ```
-providers: [
-  {
-    provide: SESSION_STORAGE_PREFIX,
-    useValue: 'my-session-storage-prefix'
-  }
-]
+import { SESSION_STORAGE_PREFIX } from 'ngx-storage-master';
+
+@NgModule({
+  declarations: [...],
+  imports: [...],
+  providers: [
+    {
+      provide: SESSION_STORAGE_PREFIX,
+      useValue: 'my-session-storage-prefix'
+    }
+  ],
+  bootstrap: [...]
+})
 ```
 
 or:
 
 ```
-providers: [
-  {
-    provide: LOCAL_STORAGE_PREFIX,
-    useValue: 'my-local-storage-prefix'
-  }
-]
+import { LOCAL_STORAGE_PREFIX } from 'ngx-storage-master';
+
+@NgModule({
+  declarations: [...],
+  imports: [...],
+  providers: [
+    {
+      provide: LOCAL_STORAGE_PREFIX,
+      useValue: 'my-local-storage-prefix'
+    }
+  ],
+  bootstrap: [...]
+})
 ```
 
 Now, just use the service you want to use. For retrieval, it is required that you specify a so-called type guard. TypeScript is able to guarantee type-safety compile time. However, since we are dealing with raw data from LocalStorage and SessionStorage, we need
 to add a runtime check as well. If you do not like this, or you think it is nonsense, just pass a wildcard: `const typeGuard = () => true;`. Remember: you are always in control of your data.
 
 ```
+import { Component, OnInit } from '@angular/core';
+import { SessionStorageService, StorageObject } from 'ngx-storage-master';
+
 // For demonstration purpose only
 interface SessionStorageObject {
   value: string;
