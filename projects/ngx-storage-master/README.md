@@ -61,17 +61,3 @@ export class CustomComponent implements OnInit {
 ```
 
 The api for the LocalStorageService does not differ compared to the SessionStorageService.
-
-## Run tests
-Test are written in the Jest test runner. To run them, just execute the following:
-```
-npm install
-npm run test
-```
-
-## Build and publish
-```
-ng build ngx-storage-master --prod
-cd dist/ngx-storage-master
-npm publish
-```
